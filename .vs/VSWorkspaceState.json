@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\GalleryApp",
+    "\\src\\NuGetGallery",
+    "\\src\\SharedInterface",
+    "\\src\\TelemetryAppDomain"
+  ],
+  "SelectedNode": "\\src\\GalleryApp\\TelemetryWrapper.cs",
+  "PreviewInSolutionExplorer": false
+}

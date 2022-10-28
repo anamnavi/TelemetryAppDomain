@@ -1,0 +1,6 @@
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\SharedInterface\bin\Debug\SharedInterface.dll
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\SharedInterface\bin\Debug\SharedInterface.pdb
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\SharedInterface\obj\Debug\SharedInterface.csproj.AssemblyReference.cache
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\SharedInterface\obj\Debug\SharedInterface.csproj.CoreCompileInputs.cache
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\SharedInterface\obj\Debug\SharedInterface.dll
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\SharedInterface\obj\Debug\SharedInterface.pdb

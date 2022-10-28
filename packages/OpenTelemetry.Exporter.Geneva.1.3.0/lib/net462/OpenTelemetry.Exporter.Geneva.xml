@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenTelemetry.Exporter.Geneva</name>
+    </assembly>
+    <members>
+        <member name="M:OpenTelemetry.Exporter.Geneva.ExporterEventSource.ToInvariantString(System.Exception)">
+            <summary>
+            Returns a culture-independent string representation of the given <paramref name="exception"/> object,
+            appropriate for diagnostics tracing.
+            </summary>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.GenevaMetricExporterExtensions.AddGenevaMetricExporter(OpenTelemetry.Metrics.MeterProviderBuilder,System.Action{OpenTelemetry.Exporter.Geneva.GenevaMetricExporterOptions})">
+            <summary>
+            Adds <see cref="T:OpenTelemetry.Exporter.Geneva.GenevaMetricExporter"/> to the <see cref="T:OpenTelemetry.Metrics.MeterProviderBuilder"/>.
+            </summary>
+            <param name="builder"><see cref="T:OpenTelemetry.Metrics.MeterProviderBuilder"/> builder to use.</param>
+            <param name="configure">Exporter configuration options.</param>
+            <returns>The instance of <see cref="T:OpenTelemetry.Metrics.MeterProviderBuilder"/> to chain the calls.</returns>
+        </member>
+        <member name="P:OpenTelemetry.Exporter.Geneva.GenevaMetricExporterOptions.ConnectionString">
+            <summary>
+            Gets or sets the ConnectionString which contains semicolon separated list of key-value pairs.
+            For e.g.: "Account=OTelMonitoringAccount;Namespace=OTelMetricNamespace".
+            </summary>
+        </member>
+        <member name="P:OpenTelemetry.Exporter.Geneva.GenevaMetricExporterOptions.MetricExportIntervalMilliseconds">
+            <summary>
+            Gets or sets the metric export interval in milliseconds. The default value is 20000.
+            </summary>
+        </member>
+        <member name="P:OpenTelemetry.Exporter.Geneva.GenevaMetricExporterOptions.PrepopulatedMetricDimensions">
+            <summary>
+            Gets or sets the pre-populated dimensions for all the metrics exported by the exporter.
+            </summary>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.IMetricDataTransport.Send(OpenTelemetry.Exporter.Geneva.MetricEventType,System.Byte[],System.Int32)">
+            <summary>
+            Writes a standard metric event containing only a single value.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="body">The byte array containing the serialized data.</param>
+            <param name="size">Length of the payload (fixed + variable).</param>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.MetricSerializer.SerializeString(System.Byte[],System.Int32@,System.String)">
+            <summary>
+            Writes the string to buffer.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="bufferIndex">Index of the buffer.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.MetricSerializer.SerializeEncodedString(System.Byte[],System.Int32@,System.Byte[])">
+            <summary>
+            Writes the encoded string to buffer.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="bufferIndex">Index of the buffer.</param>
+            <param name="encodedValue">The encoded value.</param>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.MetricSerializer.SerializeByte(System.Byte[],System.Int32@,System.Byte)">
+            <summary>
+            Writes the byte to buffer.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="bufferIndex">Index of the buffer.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.MetricSerializer.SerializeUInt16(System.Byte[],System.Int32@,System.UInt16)">
+            <summary>
+            Writes the unsigned short to buffer.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="bufferIndex">Index of the buffer.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.MetricSerializer.SerializeInt16(System.Byte[],System.Int32@,System.Int16)">
+            <summary>
+            Writes the short to buffer.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="bufferIndex">Index of the buffer.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.MetricSerializer.SerializeUInt32(System.Byte[],System.Int32@,System.UInt32)">
+            <summary>
+            Writes the unsigned int to buffer.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="bufferIndex">Index of the buffer.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.MetricSerializer.SerializeUInt64(System.Byte[],System.Int32@,System.UInt64)">
+            <summary>
+            Writes the ulong to buffer.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="bufferIndex">Index of the buffer.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:OpenTelemetry.Exporter.Geneva.BinaryHeader">
+            <summary>
+            Represents the binary header for non-ETW transmitted metrics.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.BinaryHeader.EventId">
+            <summary>
+            The event ID that represents how it will be processed.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.BinaryHeader.BodyLength">
+            <summary>
+            The length of the body following the header.
+            </summary>
+        </member>
+        <member name="T:OpenTelemetry.Exporter.Geneva.MetricPayload">
+            <summary>
+            Represents the fixed payload of a standard metric.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.MetricPayload.CountDimension">
+            <summary>
+            The dimension count.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.MetricPayload.ReservedWord">
+            <summary>
+            Reserved for alignment.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.MetricPayload.ReservedDword">
+            <summary>
+            Reserved for alignment.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.MetricPayload.TimestampUtc">
+            <summary>
+            The UTC timestamp of the metric.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.MetricPayload.Data">
+            <summary>
+            The value of the metric.
+            </summary>
+        </member>
+        <member name="T:OpenTelemetry.Exporter.Geneva.ExternalPayload">
+            <summary>
+            Represents the fixed payload of an externally aggregated metric.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.ExternalPayload.CountDimension">
+            <summary>
+            The dimension count.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.ExternalPayload.ReservedWord">
+            <summary>
+            Reserved for alignment.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.ExternalPayload.Count">
+            <summary>
+            The number of samples produced in the period.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.ExternalPayload.TimestampUtc">
+            <summary>
+            The UTC timestamp of the metric.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.ExternalPayload.Sum">
+            <summary>
+            The sum of the samples produced in the period.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.ExternalPayload.Min">
+            <summary>
+            The minimum value of the samples produced in the period.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.ExternalPayload.Max">
+            <summary>
+            The maximum value of the samples produced in the period.
+            </summary>
+        </member>
+        <member name="T:OpenTelemetry.Exporter.Geneva.MetricData">
+            <summary>
+            Represents the value of a metric.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.MetricData.UInt64Value">
+            <summary>
+            The value represented as an integer.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Geneva.MetricData.DoubleValue">
+            <summary>
+            The value represented as a double.
+            </summary>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Geneva.UnixDomainSocketDataTransport.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OpenTelemetry.Exporter.Geneva.UnixDomainSocketDataTransport"/> class.
+            The class for transporting data over Unix domain socket.
+            </summary>
+            <param name="unixDomainSocketPath">The path to connect a unix domain socket over.</param>
+            <param name="timeoutMilliseconds">
+            The time-out value, in milliseconds.
+            If you set the property with a value between 1 and 499, the value will be changed to 500.
+            The default value is 15,000 milliseconds.
+            </param>
+        </member>
+        <member name="T:OpenTelemetry.Internal.Guard">
+            <summary>
+            Methods for guarding against exception throwing values.
+            </summary>
+        </member>
+        <member name="M:OpenTelemetry.Internal.Guard.ThrowIfNull(System.Object,System.String)">
+            <summary>
+            Throw an exception if the value is null.
+            </summary>
+            <param name="value">The value to check.</param>
+            <param name="paramName">The parameter name to use in the thrown exception.</param>
+        </member>
+        <member name="M:OpenTelemetry.Internal.Guard.ThrowIfNullOrEmpty(System.String,System.String)">
+            <summary>
+            Throw an exception if the value is null or empty.
+            </summary>
+            <param name="value">The value to check.</param>
+            <param name="paramName">The parameter name to use in the thrown exception.</param>
+        </member>
+        <member name="M:OpenTelemetry.Internal.Guard.ThrowIfNullOrWhitespace(System.String,System.String)">
+            <summary>
+            Throw an exception if the value is null or whitespace.
+            </summary>
+            <param name="value">The value to check.</param>
+            <param name="paramName">The parameter name to use in the thrown exception.</param>
+        </member>
+        <member name="M:OpenTelemetry.Internal.Guard.ThrowIfZero(System.Int32,System.String,System.String)">
+            <summary>
+            Throw an exception if the value is zero.
+            </summary>
+            <param name="value">The value to check.</param>
+            <param name="message">The message to use in the thrown exception.</param>
+            <param name="paramName">The parameter name to use in the thrown exception.</param>
+        </member>
+        <member name="M:OpenTelemetry.Internal.Guard.ThrowIfInvalidTimeout(System.Int32,System.String)">
+            <summary>
+            Throw an exception if the value is not considered a valid timeout.
+            </summary>
+            <param name="value">The value to check.</param>
+            <param name="paramName">The parameter name to use in the thrown exception.</param>
+        </member>
+        <member name="M:OpenTelemetry.Internal.Guard.ThrowIfOutOfRange(System.Int32,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Throw an exception if the value is not within the given range.
+            </summary>
+            <param name="value">The value to check.</param>
+            <param name="paramName">The parameter name to use in the thrown exception.</param>
+            <param name="min">The inclusive lower bound.</param>
+            <param name="max">The inclusive upper bound.</param>
+            <param name="minName">The name of the lower bound.</param>
+            <param name="maxName">The name of the upper bound.</param>
+            <param name="message">An optional custom message to use in the thrown exception.</param>
+        </member>
+        <member name="M:OpenTelemetry.Internal.Guard.ThrowIfOutOfRange(System.Double,System.String,System.Double,System.Double,System.String,System.String,System.String)">
+            <summary>
+            Throw an exception if the value is not within the given range.
+            </summary>
+            <param name="value">The value to check.</param>
+            <param name="paramName">The parameter name to use in the thrown exception.</param>
+            <param name="min">The inclusive lower bound.</param>
+            <param name="max">The inclusive upper bound.</param>
+            <param name="minName">The name of the lower bound.</param>
+            <param name="maxName">The name of the upper bound.</param>
+            <param name="message">An optional custom message to use in the thrown exception.</param>
+        </member>
+        <member name="M:OpenTelemetry.Internal.Guard.ThrowIfNotOfType``1(System.Object,System.String)">
+            <summary>
+            Throw an exception if the value is not of the expected type.
+            </summary>
+            <param name="value">The value to check.</param>
+            <param name="paramName">The parameter name to use in the thrown exception.</param>
+            <typeparam name="T">The type attempted to convert to.</typeparam>
+            <returns>The value casted to the specified type.</returns>
+        </member>
+        <member name="T:System.ServiceProviderExtensions">
+            <summary>
+            Extension methods for OpenTelemetry dependency injection support.
+            </summary>
+        </member>
+        <member name="M:System.ServiceProviderExtensions.GetOptions``1(System.IServiceProvider)">
+            <summary>
+            Get options from the supplied <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="T">Options type.</typeparam>
+            <param name="serviceProvider"><see cref="T:System.IServiceProvider"/>.</param>
+            <returns>Options instance.</returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute">
+            <summary>
+            Allows capturing of the expressions passed to a method.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute"/> class.
+            </summary>
+            <param name="parameterName">The name of the targeted parameter.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.ParameterName">
+            <summary>
+            Gets the target parameter name of the CallerArgumentExpression.
+            </summary>
+        </member>
+    </members>
+</doc>

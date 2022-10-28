@@ -1,0 +1,9 @@
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\MainApp\bin\Debug\MainApp.dll
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\MainApp\bin\Debug\MainApp.pdb
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\MainApp\bin\Debug\SharedInterface.dll
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\MainApp\bin\Debug\SharedInterface.pdb
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\MainApp\obj\Debug\MainApp.csproj.AssemblyReference.cache
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\MainApp\obj\Debug\MainApp.csproj.CoreCompileInputs.cache
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\MainApp\obj\Debug\MainApp.csproj.CopyComplete
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\MainApp\obj\Debug\MainApp.dll
+C:\Users\annavied\Documents\TestTelemetryAppDomain\src\MainApp\obj\Debug\MainApp.pdb
