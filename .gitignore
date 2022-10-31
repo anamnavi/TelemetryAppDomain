@@ -1,0 +1,4 @@
+src/NuGetGallery/bin
+src/NuGetGallery/obj
+src/TelemetryAppDomain/bin
+src/TelemetryAppDomain/obj

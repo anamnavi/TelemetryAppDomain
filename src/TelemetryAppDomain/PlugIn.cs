@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using CommonInterface;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Exporter.Geneva;
 using System.Diagnostics.Metrics;
+using NuGetGallery;
 
 namespace PlugIn1
 {
     [Serializable]
-    public class PlugIn : MarshalByRefObject, IPlugIn
+    public class PlugIn : MarshalByRefObject, IMyPlugIn
     {
         private static IDisposable _meterProvider;
         private static IDisposable _tracerProvider;

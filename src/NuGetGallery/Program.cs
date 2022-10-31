@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MainApp;
 
 
 namespace NuGetGallery
@@ -13,13 +12,13 @@ namespace NuGetGallery
         public static void Main()
         {
             Console.WriteLine("IN DEFAULT APP DOMAIN");
-            TelemetryWrapper.PrintLoadedAssemblies();
+            TelWrapper.PrintLoadedAssemblies();
             
             Console.WriteLine("CREATE APP DOMAIN NOW");
 
             try
             {
-                TelemetryWrapper.AppDomainStartup();
+                TelWrapper.AppDomainStartup();
             }
             catch(Exception e)
             {
@@ -27,7 +26,7 @@ namespace NuGetGallery
             }
 
 
-            TelemetryWrapper.PrintLoadedAssemblies();
+            TelWrapper.PrintLoadedAssemblies();
 
 
             // AppDomain appDomain1 = CreateAppDomain("PlugIn1");
@@ -39,12 +38,12 @@ namespace NuGetGallery
             // UnloadPlugin(appDomain1);
 
             // TestIfUnloaded(plugin1);
-            Console.WriteLine(TelemetryWrapper.ReturnNum(2, 7));
+            Console.WriteLine(TelWrapper.ReturnNum(2, 7));
 
-            TelemetryWrapper.AppDomainTakedown();
+            TelWrapper.AppDomainTakedown();
 
             Console.WriteLine("AFTER SECONDARY APP DOMAIN TAKEDOWN");
-            TelemetryWrapper.PrintLoadedAssemblies();
+            TelWrapper.PrintLoadedAssemblies();
         }
 
         // equivalent to method in SearchController class:
@@ -56,8 +55,8 @@ namespace NuGetGallery
             string exceptionType = "";
             long duration = 5;
 
-            // TelemetryWrapper.TelemetryProcess(); // TODO: to use TelemetryOperation enum create project reference to SharedInterface
-            TelemetryWrapper.TelemetryProcessSearchModule(success, pkgName, pkgVersion, statusSuccess, statusCode, exceptionType, duration);
+            // TelWrapper.TelemetryProcess(); // TODO: to use TelemetryOperation enum create project reference to SharedInterface
+            TelWrapper.TelemetryProcessSearchModule(success, pkgName, pkgVersion, statusSuccess, statusCode, exceptionType, duration);
         }
 
         static void SearchScript(string pkgName, string pkgVersion)
@@ -68,8 +67,8 @@ namespace NuGetGallery
             string exceptionType = "";
             long duration = 5;
 
-            // TelemetryWrapper.TelemetryProcess(); // TODO: to use TelemetryOperation enum create project reference to SharedInterface
-            TelemetryWrapper.TelemetryProcessSearchScript(success, pkgName, pkgVersion, statusSuccess, statusCode, exceptionType, duration);
+            // TelWrapper.TelemetryProcess(); // TODO: to use TelemetryOperation enum create project reference to SharedInterface
+            TelWrapper.TelemetryProcessSearchScript(success, pkgName, pkgVersion, statusSuccess, statusCode, exceptionType, duration);
         }
 
         static void Download(string pkgName, string pkgVersion)
@@ -80,8 +79,8 @@ namespace NuGetGallery
             string exceptionType = "";
             long duration = 5;
 
-            // TelemetryWrapper.TelemetryProcess(); // TODO: to use TelemetryOperation enum create project reference to SharedInterface
-            TelemetryWrapper.TelemetryProcessDownloadResource(success, pkgName, pkgVersion, statusSuccess, statusCode, exceptionType, duration);
+            // TelWrapper.TelemetryProcess(); // TODO: to use TelemetryOperation enum create project reference to SharedInterface
+            TelWrapper.TelemetryProcessDownloadResource(success, pkgName, pkgVersion, statusSuccess, statusCode, exceptionType, duration);
         }
     }
 }

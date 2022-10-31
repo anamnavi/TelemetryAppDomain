@@ -122,13 +122,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="TelWrapper.cs" />
+    <Compile Include="IMyPlugIn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MainApp\MainApp.csproj">
-      <Project>{ca45370e-4c1e-4fbd-ba45-812de376693c}</Project>
-      <Name>MainApp</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -140,9 +140,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SharedInterface\SharedInterface.csproj">
-      <Project>{782c98e5-bc6a-4cf7-946e-c370c4345b39}</Project>
-      <Name>SharedInterface</Name>
+    <ProjectReference Include="..\NuGetGallery\NuGetGallery.csproj">
+      <Project>{024f3df6-bb70-4184-b099-751d470e0c83}</Project>
+      <Name>NuGetGallery</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
